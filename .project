@@ -27,9 +27,9 @@
 	</natures>
 	<linkedResources>
 		<link>
-			<name>Libraries/NeoPixel</name>
+			<name>Libraries/Adafruit_NeoPixel</name>
 			<type>2</type>
-			<locationURI>ArduinoPrivateLibPath/NeoPixel</locationURI>
+			<locationURI>ArduinoPrivateLibPath/Adafruit_NeoPixel</locationURI>
 		</link>
 		<link>
 			<name>arduino/core</name>

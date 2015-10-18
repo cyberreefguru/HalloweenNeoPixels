@@ -18,7 +18,9 @@ void lightning();
 void writeColor(uint32_t color, uint8_t show);
 
 
-//The setup function is called once at startup of the sketch
+/**
+ * Set up pixels and seed the random number generator
+ */
 void setup()
 {
 	randomSeed(analogRead(0));
@@ -27,31 +29,33 @@ void setup()
 	writeColor(WHITE, false);
 }
 
-// The loop function is called in an endless loop
+/**
+ * Run the loop
+ */
 void loop()
 {
 	fade(UP, 10, ORANGE);
-	delay(5000);
+	delay(7000);
 	fade(DOWN, 10, ORANGE);
 
 	selectCrossover();
 
 	fade(UP, 10, PURPLE);
-	delay(5000);
+	delay(7000);
 	fade(DOWN, 10, PURPLE);
 
 	fade(UP, 10, RED);
-	delay(5000);
+	delay(7000);
 	selectCrossover();
 	fade(DOWN, 10, RED);
 
 	fade(UP, 10, GREEN);
-	delay(5000);
+	delay(7000);
 	fade(DOWN, 10, GREEN);
 	selectCrossover();
 
 	fade(UP, 10, BLUE);
-	delay(5000);
+	delay(7000);
 	selectCrossover();
 	fade(DOWN, 10, BLUE);
 
@@ -59,7 +63,10 @@ void loop()
 
 }
 
-
+/**
+ * Randomly determines if there will be
+ * lightning or strobe.
+ */
 void selectCrossover()
 {
 	uint32_t x, high, low;
@@ -78,6 +85,9 @@ void selectCrossover()
 	}
 }
 
+/**
+ * Fades LEDs up or down with the specified time increment
+ */
 void fade(uint8_t direction, uint32_t time, uint32_t color)
 {
 	uint8_t i;
@@ -98,6 +108,9 @@ void fade(uint8_t direction, uint32_t time, uint32_t color)
 
 }
 
+/**
+ * Flashes LEDs rapidly
+ */
 void strobe(uint32_t duration)
 {
 	uint32_t end = millis() + duration;
@@ -112,7 +125,9 @@ void strobe(uint32_t duration)
 	}
 }
 
-
+/**
+ * Flashes LEDs randomly
+ */
 void lightning()
 {
 
@@ -148,6 +163,9 @@ void lightning()
 	}
 }
 
+/**
+ * Sets the whole strip a specific color
+ */
 void writeColor(uint32_t color, uint8_t show)
 {
 	for(uint8_t i=0; i<NUM_PIXELS; i++)
