@@ -6,7 +6,7 @@
 #define PIN 2
 #define DOWN 	0
 #define UP		1
-Adafruit_NeoPixel pixels = Adafruit_NeoPixel(NUM_PIXELS, PIN);
+Adafruit_NeoPixel pixels = Adafruit_NeoPixel(NUM_PIXELS, PIN, NEO_RGB + NEO_KHZ800);
 
 uint32_t buffer[NUM_PIXELS];
 uint8_t mode = 0;
@@ -26,8 +26,9 @@ void setup()
 	randomSeed(analogRead(0));
 	pixels.begin();
 	pixels.setBrightness(255);
-	writeColor(WHITE, false);
+//	writeColor(WHITE, false);
 }
+
 
 /**
  * Run the loop

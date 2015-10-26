@@ -7,7 +7,6 @@
 #ifndef _HalloweenNeoPixels_H_
 #define _HalloweenNeoPixels_H_
 #include "Arduino.h"
-//#include "RGB.h"
 #include <Adafruit_NeoPixel.h>
 
 #define WHITE	0x00FFFFFF
